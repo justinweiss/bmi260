@@ -39,7 +39,11 @@ static const struct i2c_device_id bmi260_i2c_id[] = {
 MODULE_DEVICE_TABLE(i2c, bmi260_i2c_id);
 
 static const struct acpi_device_id bmi260_acpi_match[] = {
+	{"BOSC0260", 0},
+	{"BMI0260", 0},
+	{"BOSC0160", 0},
 	{"BMI0160", 0},
+	{"10EC5280", 0},
 	{ },
 };
 MODULE_DEVICE_TABLE(acpi, bmi260_acpi_match);
