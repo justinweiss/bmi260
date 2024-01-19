@@ -18,7 +18,7 @@ pikaur -S bmi260-dkms
 ```
 
 ## Other Distributions
-You can also install as a DKMS package manually if you are on Fedora.
+You can also install as a DKMS package manually if you are on Fedora or another distro.
 ```bash
 sudo git clone https://github.com/hhd-dev/bmi260 /usr/src/bmi260-0.0.1
 cd /usr/src/bmi260-0.0.1
