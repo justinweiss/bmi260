@@ -37,6 +37,6 @@ sudo rm -r /usr/src/bmi260-0.0.1
 ```
 
 # License
-The driver in this repository is licensed under GPL-2.0, following the driver it is based on (for the Bosch 160). 
+The driver in this repository is licensed under GPL-2.0-only, following the driver it is based on (for the Bosch 160). 
 
 The configuration blob that is uploaded to the BMI 260 is sourced from ChromeOS and licensed under BSD-3.
