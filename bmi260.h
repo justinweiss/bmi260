@@ -2,6 +2,7 @@
 #ifndef BMI260_H_
 #define BMI260_H_
 
+#include <linux/version.h>
 #include <linux/iio/iio.h>
 #include <linux/regulator/consumer.h>
 
@@ -34,5 +35,14 @@ int bmi260_core_probe(struct device *dev, struct regmap *regmap,
 int bmi260_enable_irq(struct regmap *regmap, enum bmi260_int_pin pin, bool enable);
 
 int bmi260_probe_trigger(struct iio_dev *indio_dev, int irq, u32 irq_type);
+
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 13, 0)
+#define BMI260_EXPORT_SYMBOL(symbol)	EXPORT_SYMBOL_NS_GPL(symbol, "IIO_BMI260");
+#define BMI260_IMPORT_NS		MODULE_IMPORT_NS("IIO_BMI260");
+#else
+#define BMI260_EXPORT_SYMBOL(symbol)	EXPORT_SYMBOL_NS_GPL(symbol, IIO_BMI260);
+#define BMI260_IMPORT_NS		MODULE_IMPORT_NS(IIO_BMI260);
+#endif
+
 
 #endif  /* BMI260_H_ */
